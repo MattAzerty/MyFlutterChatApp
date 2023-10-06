@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'pages/FirstPage.dart';
+import 'pages/first_page.dart';
 
 void main() {
   runApp(const MyApp());
