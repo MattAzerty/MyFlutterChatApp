@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class SecondPage extends StatefulWidget {//Dynamique (stateful)
   const SecondPage({super.key});
@@ -30,30 +29,25 @@ class _SecondPageState extends State<SecondPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("SecondPage (List)"),
-      ),
-      body: Center(
-        child: ListView.builder(
-          itemCount: myList.length,
-          itemBuilder: (context, index){
+    return Center(
+      child: ListView.builder(
+        itemCount: myList.length,
+        itemBuilder: (context, index){
 
-            final item = myList[index];
-            final icon = item['icon'];
-            final title = item['title'];
-            final subtitle = item['subtitle'];
+          final item = myList[index];
+          final icon = item['icon'];
+          final title = item['title'];
+          final subtitle = item['subtitle'];
 
-            return  Card(
-              child: ListTile(
-                leading: Image.asset("assets/images/$icon.png"),
-                title: Text("$title"),
-                subtitle: Text("$subtitle"),
-                trailing: Icon(Icons.more_vert),
-              ),
-            );
-          } ,
-        ),
+          return  Card(
+            child: ListTile(
+              leading: Image.asset("assets/images/$icon.png"),
+              title: Text("$title"),
+              subtitle: Text("$subtitle"),
+              trailing: Icon(Icons.more_vert),
+            ),
+          );
+        } ,
       ),
     );
   }
