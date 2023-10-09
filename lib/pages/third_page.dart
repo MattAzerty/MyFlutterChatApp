@@ -1,4 +1,5 @@
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:date_field/date_field.dart';
 import 'package:flutter/material.dart';
 
@@ -124,6 +125,21 @@ class _ThirdPageState extends State<ThirdPage> {
                                     " & option: $selectedOptionDropDownMenu & dateTime: $selectedDateTime")
                             )
                         );
+
+                        //Firestore collection register
+
+                        CollectionReference myCollection = FirebaseFirestore.instance.collection("MyCollection001");
+                        myCollection.add(
+                          {
+                            'Field001': field1,
+                            'Field002':field2,
+                            'Option':selectedOptionDropDownMenu,
+                            'Date':selectedDateTime,
+                          }
+                        );
+
+
+
                       }
 
                       FocusScope.of(context).requestFocus(FocusNode());
